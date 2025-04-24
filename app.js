@@ -14,7 +14,7 @@ let btnMainTwo=document.querySelector('.button-two');
 
 function firstSecondFetch(){
     if(main==1){
-        fetch(`https://v6.exchangerate-api.com/v6/b2c6d5505dca27894696cfb9/pair/${first}/${second}`).then(res => res.json()).then(data =>{
+        fetch(`https://v6.exchangerate-api.com/v6/cdebdc0d37df04b87e939f59/pair/${first}/${second}`).then(res => res.json()).then(data =>{
             secondInp.value = (Number(firstInp.value) * data.conversion_rate).toFixed(5);
             if(firstInp.value == ""){
                 secondInp.value = "";
@@ -22,7 +22,7 @@ function firstSecondFetch(){
     })
 }
 else if(main==2){
-    fetch(`https://v6.exchangerate-api.com/v6/b2c6d5505dca27894696cfb9/pair/${first}/${second}`).then(res => res.json()).then(data =>{
+    fetch(`https://v6.exchangerate-api.com/v6/cdebdc0d37df04b87e939f59/pair/${first}/${second}`).then(res => res.json()).then(data =>{
         firstInp.value = (Number(secondInp.value) * data.conversion_rate).toFixed(5);
         if(secondInp.value == ""){
             firstInp.value = "";
@@ -32,10 +32,10 @@ else if(main==2){
 };
 
 function footerText(){
-    fetch(`https://v6.exchangerate-api.com/v6/b2c6d5505dca27894696cfb9/pair/${first}/${second}`).then(res => res.json()).then(data =>{
+    fetch(`https://v6.exchangerate-api.com/v6/cdebdc0d37df04b87e939f59/pair/${first}/${second}`).then(res => res.json()).then(data =>{
         footerTextOne.textContent="1 "+first+" = "+data.conversion_rate+" "+ second
     })
-    fetch(`https://v6.exchangerate-api.com/v6/b2c6d5505dca27894696cfb9/pair/${first}/${second}`).then(res => res.json()).then(data =>{
+    fetch(`https://v6.exchangerate-api.com/v6/cdebdc0d37df04b87e939f59/pair/${first}/${second}`).then(res => res.json()).then(data =>{
         footerTextTwo.textContent="1 "+second+" = "+data.conversion_rate+" "+ first
     })
 };
